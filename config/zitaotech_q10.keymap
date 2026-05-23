@@ -115,7 +115,7 @@
 //        -----------------------------------------------------------------------------------------------------------------
 
                  &kp TAB                                                                                            &mkp RCLK
-    &kp LGUI                &mo ALT                             &mkp LCLK                          &mo ALT                           &kp ESC
+    &kp LGUI                &sl ALT                             &mkp LCLK                          &sl ALT                           &kp ESC
     &kp Q              &kp W      &kp E       &kp R     &kp T         &kp Y             &kp U            &kp I            &kp O            &kp P
     &kp A              &kp S      &kp D       &kp F     &kp G         &kp H             &kp J            &kp K            &kp L            &kp BSPC
     &kp LALT           &kp Z      &kp X       &kp C     &kp V         &kp B             &kp N            &kp M            &kp DLLR         &kp ENTER
@@ -160,10 +160,10 @@
         };
 
         alt_layer {
-            // BlackBerry-style alt-hold layer. Triggered by HOLDING either green △ (Row 2 col 2,
-            // matrix RC(8,3)) or magenta ✕ (Row 2 col 4, matrix RC(8,4)). Both bound to &mo ALT.
-            // Matrix row 8 contains only those two keys + the shoulders — no alpha keys — so no
-            // matrix collisions for any of the 28 alt-labels. Use whichever thumb is closer.
+            // BlackBerry-style alt layer (sticky-tap). Triggered by TAPPING green △ (Row 2 col 2)
+            // or magenta ✕ (Row 2 col 4). Tap → ALT active for next single keypress → back to DEFAULT.
+            // Type multiple alt-symbols in a row by re-tapping the trigger before each one.
+            // The 3s &sl release-after timeout (line 30) applies if no follow-up key is pressed.
             // (The printed "alt" key on the alpha grid is &kp LALT — the actual Alt modifier.)
             // Keys with a printed alt-label produce that label here; others &trans through to DEFAULT.
             bindings = <
